@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "fix-google-maps-not-updating-location-600x341.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "fix-google-maps-not-updating-location-600x341-1.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "fix-google-maps-not-updating-location-600x341-2.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
