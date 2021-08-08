@@ -27,7 +27,7 @@ class WeatherViewController: UIViewController {
     }
     
     func setUp() {
-        title = "Waather"
+        title = "Weather"
         viewModel?.fetchWeather()
     }
 
