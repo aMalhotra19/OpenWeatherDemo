@@ -25,6 +25,7 @@ class WeatherViewModel {
         self.lat = lat
         self.long = long
     }
+    
     var temperature: String? {
         return String(weatherModel?.main.temp ?? 0)
     }
@@ -49,7 +50,6 @@ class WeatherViewModel {
         delegate?.showIndicator()
         BookmarkManager.shared.fetchWeather(for: lat, and: long) { (result) in
             DispatchQueue.main.async { [weak self] in
-                print(result)
                 switch result {
                 case .success(let weather):
                     self?.weatherModel = weather

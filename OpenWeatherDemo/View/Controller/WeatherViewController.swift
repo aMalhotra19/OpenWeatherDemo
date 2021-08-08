@@ -27,12 +27,14 @@ class WeatherViewController: UIViewController {
     }
     
     func setUp() {
+        title = "Waather"
         viewModel?.fetchWeather()
     }
 
 }
 
 extension WeatherViewController: WeatherDisplayable {
+    
     func hideIndicator() {
         activityView.stopAnimating()
     }
@@ -46,21 +48,30 @@ extension WeatherViewController: WeatherDisplayable {
     }
     
     func showIndicator() {
+        configureActivityIndicator()
+        navigationController?.view.addSubview(activityView)
+    }
+    
+    func configureActivityIndicator() {
         activityView.frame = view.frame
         activityView.center = view.center
         activityView.hidesWhenStopped = true
         activityView.style = .large
         activityView.color = .yellow
         activityView.backgroundColor = .gray
+        activityView.alpha = 0.5
         activityView.startAnimating()
-        view.addSubview(activityView)
     }
     
     func showAlert(_ error: NetworkError?) {
+        // Hide all views in case of error
+        for view in view.subviews {
+            view.isHidden = true
+        }
         let message = error == NetworkError.decodingError ? "System Error" : "Network Unavailable"
         
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in self.navigationController?.popViewController(animated: true) }))
         present(alert, animated: true, completion: nil)
     }
 }

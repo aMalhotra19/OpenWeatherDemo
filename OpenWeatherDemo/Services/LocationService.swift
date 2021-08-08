@@ -16,11 +16,9 @@ class LocationService {
                         guard let data = data else { return }
                         let items = try JSONDecoder().decode(WeatherModel.self, from: data)
                         completion(.success(items))
-                        print(items)
                     }
                     catch {
                         completion(.failure(NetworkError.decodingError))
-                        print("error")
                     }
                 } else {
                     completion(.failure(NetworkError.networkError))

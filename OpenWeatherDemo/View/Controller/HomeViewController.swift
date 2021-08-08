@@ -30,12 +30,18 @@ class HomeViewController: UIViewController, BookmarkDisplayable {
             hideIndicator()
         }
     }
+}
+
+extension HomeViewController {
     
     func refresh() {
         viewModel.annotations = BookmarkManager.shared.annotations
         viewModel.configureBookmarkCellViewModel()
         bookmarkTableView.reloadData()
     }
+}
+
+extension HomeViewController {
     
     @objc func routeToLocationVC() {
         showIndicator()
@@ -53,25 +59,32 @@ class HomeViewController: UIViewController, BookmarkDisplayable {
             let selectedRow = (sender as? IndexPath)?.row ?? 0
             let selectedAnnotation = viewModel.annotations[selectedRow]
             let destinationVC = segue.destination as? WeatherViewController
-            let viewModel = WeatherViewModel(lat: selectedAnnotation.coordinate.latitude, long: selectedAnnotation.coordinate.latitude)
+            let viewModel = WeatherViewModel(lat: selectedAnnotation.coordinate.latitude, long: selectedAnnotation.coordinate.longitude)
             destinationVC?.viewModel = viewModel
         }
     }
+}
+
+extension HomeViewController {
     
     func hideIndicator() {
         activityView.stopAnimating()
     }
     
     func showIndicator() {
+        configureActivityIndicator()
+        navigationController?.view.addSubview(activityView)
+    }
+    
+    func configureActivityIndicator() {
         activityView.frame = view.frame
         activityView.center = view.center
         activityView.hidesWhenStopped = true
         activityView.style = .large
         activityView.color = .yellow
         activityView.backgroundColor = .gray
-        activityView.startAnimating()
         activityView.alpha = 0.5
-        navigationController?.view.addSubview(activityView)
+        activityView.startAnimating()
     }
 }
 
@@ -104,7 +117,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func getBookmarkCell(indexPath: IndexPath, viewModel: RowDisplayable?) -> UITableViewCell {
         guard let cell = bookmarkTableView.dequeueReusableCell(withIdentifier: "\(BookmarkCell.self)") as? BookmarkCell, let cellViewModel = viewModel as? BookmarkCellViewModel else {return UITableViewCell()}
         cell.viewModel = cellViewModel
-        print(cellViewModel.title)
         return cell
     }
     

@@ -17,23 +17,16 @@ struct WeatherModel: Decodable {
 }
 
 struct Main: Decodable {
-    let temp: Double
-    let humidity: Int
+    let temp: Double?
+    let humidity: Int?
 }
 
 struct Weather: Decodable {
-    let main: String
-    let description: String
-}
-
-struct Coord: Decodable {
-    let lon: Double
-    let lat: Double
+    let main: String?
+    let description: String?
 }
 
 struct Wind: Decodable {
-    let speed: Double
-    let deg: Double
-    let gust: Double
+    let speed: Double?
 }
 

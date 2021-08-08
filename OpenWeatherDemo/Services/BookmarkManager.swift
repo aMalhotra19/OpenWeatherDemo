@@ -23,18 +23,15 @@ class BookmarkManager {
     var service = LocationService()
     
     func fetchWeather(for lat: Double, and longitude: Double, handler completion: @escaping(Result<WeatherModel, NetworkError>) -> ()) {
-        guard let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lat)&appid=fae7190d7e6433ec3a45285ffcf55c86") else {
+        guard let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(longitude)&appid=fae7190d7e6433ec3a45285ffcf55c86") else {
             return
         }
         service.fetchWeather(url:url) { (result) in
             switch result {
             case .success(let weather):
                 completion(.success(weather))
-                print("success")
             case .failure(let error):
                 completion(.failure(error))
-                print("failure")
-            
             }
         }
     }

@@ -26,6 +26,8 @@
 		1E30E27826BC6C5100A00763 /* BookmarkCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30E27726BC6C5100A00763 /* BookmarkCellViewModel.swift */; };
 		1EAD877E26BE718B007D0C27 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD877D26BE718B007D0C27 /* LocationService.swift */; };
 		1EAD878326BE77D6007D0C27 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD878226BE77D6007D0C27 /* WeatherModel.swift */; };
+		1EAD878726C037ED007D0C27 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD878626C037ED007D0C27 /* HelpViewController.swift */; };
+		1EAD878B26C039BE007D0C27 /* Help.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1EAD878A26C039BE007D0C27 /* Help.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		1E30E27726BC6C5100A00763 /* BookmarkCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCellViewModel.swift; sourceTree = "<group>"; };
 		1EAD877D26BE718B007D0C27 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		1EAD878226BE77D6007D0C27 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		1EAD878626C037ED007D0C27 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		1EAD878A26C039BE007D0C27 /* Help.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Help.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +88,11 @@
 			children = (
 				1E30E23526BBD20400A00763 /* AppDelegate.swift */,
 				1E30E23726BBD20400A00763 /* SceneDelegate.swift */,
+				1EAD878926C039B4007D0C27 /* Resources */,
 				1EAD877B26BE716A007D0C27 /* Services */,
 				1E30E26B26BBE24A00A00763 /* Model */,
 				1E30E25C26BBE05A00A00763 /* ViewModel */,
 				1E30E25426BBE00E00A00763 /* View */,
-				1E30E23B26BBD20400A00763 /* Main.storyboard */,
-				1E30E23E26BBD20C00A00763 /* Assets.xcassets */,
 				1E30E24026BBD20C00A00763 /* LaunchScreen.storyboard */,
 				1E30E24326BBD20C00A00763 /* Info.plist */,
 			);
@@ -101,6 +104,7 @@
 			children = (
 				1E30E25826BBE02B00A00763 /* Cell */,
 				1E30E25626BBE01D00A00763 /* Controller */,
+				1EAD878E26C039DF007D0C27 /* Storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,6 +115,7 @@
 				1E30E24A26BBDF9800A00763 /* HomeViewController.swift */,
 				1E30E24D26BBDFE100A00763 /* LocationViewController.swift */,
 				1E30E25026BBDFFB00A00763 /* WeatherViewController.swift */,
+				1EAD878626C037ED007D0C27 /* HelpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -152,6 +157,23 @@
 				1EAD877D26BE718B007D0C27 /* LocationService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		1EAD878926C039B4007D0C27 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1EAD878A26C039BE007D0C27 /* Help.pdf */,
+				1E30E23E26BBD20C00A00763 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1EAD878E26C039DF007D0C27 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1E30E23B26BBD20400A00763 /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E30E24226BBD20C00A00763 /* LaunchScreen.storyboard in Resources */,
+				1EAD878B26C039BE007D0C27 /* Help.pdf in Resources */,
 				1E30E23F26BBD20C00A00763 /* Assets.xcassets in Resources */,
 				1E30E23D26BBD20400A00763 /* Main.storyboard in Resources */,
 			);
@@ -235,6 +258,7 @@
 				1E30E26826BBE22F00A00763 /* Bookmark.swift in Sources */,
 				1E30E25F26BBE06D00A00763 /* LocationViewModel.swift in Sources */,
 				1E30E26E26BBFB4D00A00763 /* BookmarkManager.swift in Sources */,
+				1EAD878726C037ED007D0C27 /* HelpViewController.swift in Sources */,
 				1E30E26226BBE08500A00763 /* WeatherViewModel.swift in Sources */,
 				1E30E27526BC6C2100A00763 /* BookmarkCell.swift in Sources */,
 				1E30E23826BBD20400A00763 /* SceneDelegate.swift in Sources */,

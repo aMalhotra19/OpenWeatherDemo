@@ -10,6 +10,7 @@ import MapKit
 class LocationViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet var mapView: MKMapView!
     var viewModel: LocationViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
@@ -24,11 +25,15 @@ class LocationViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func setUp() {
+        title = "Location"
         let gesture = UILongPressGestureRecognizer(target: self, action: #selector(addAnnotation(recogniser:)))
         gesture.delegate = self
         gesture.minimumPressDuration = 1
         mapView.addGestureRecognizer(gesture)
     }
+}
+
+extension LocationViewController {
     
     func addExistingAnnotation() {
         guard let annotations = viewModel?.annotations else {return}
@@ -60,9 +65,7 @@ class LocationViewController: UIViewController, UIGestureRecognizerDelegate {
         })
         return annotation
     }
-}
 
-extension LocationViewController {
     func updateAnnotation(shouldAdd: Bool, annotation: MKAnnotation) {
         if shouldAdd {
             viewModel?.annotations.append(annotation)
@@ -73,6 +76,7 @@ extension LocationViewController {
         }
     }
 }
+
 extension LocationViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         showAlert(annotation: view.annotation!, add: false)
