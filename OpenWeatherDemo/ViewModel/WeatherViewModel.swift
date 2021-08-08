@@ -38,7 +38,7 @@ class WeatherViewModel {
     }
     
     var name: String? {
-        return weatherModel?.name ?? "Unknown location"
+        return weatherModel?.name?.count == 0 ? "Unknown location" : weatherModel?.name
     }
     
     var main: String? {

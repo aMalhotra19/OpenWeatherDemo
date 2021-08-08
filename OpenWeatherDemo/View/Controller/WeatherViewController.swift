@@ -53,7 +53,7 @@ extension WeatherViewController: WeatherDisplayable {
         activityView.color = .yellow
         activityView.backgroundColor = .gray
         activityView.startAnimating()
-        navigationController?.view.addSubview(activityView)
+        view.addSubview(activityView)
     }
     
     func showAlert(_ error: NetworkError?) {

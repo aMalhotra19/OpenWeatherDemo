@@ -11,6 +11,7 @@ class HomeViewController: UIViewController, BookmarkDisplayable {
     @IBOutlet var bookmarkTableView: UITableView!
     var bookmark: [String] = []
     var viewModel = HomeViewModel()
+    var activityView: UIActivityIndicatorView = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +24,21 @@ class HomeViewController: UIViewController, BookmarkDisplayable {
     override func viewWillAppear(_ animated: Bool) {
         refresh()
     }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        if activityView.isAnimating {
+            hideIndicator()
+        }
+    }
     
     func refresh() {
         viewModel.annotations = BookmarkManager.shared.annotations
-        //viewModel.bookmarkCellViewModel.removeAll()
         viewModel.configureBookmarkCellViewModel()
         bookmarkTableView.reloadData()
     }
     
     @objc func routeToLocationVC() {
+        showIndicator()
         performSegue(withIdentifier: "LocationSegue", sender: self)
     }
     
@@ -49,6 +56,22 @@ class HomeViewController: UIViewController, BookmarkDisplayable {
             let viewModel = WeatherViewModel(lat: selectedAnnotation.coordinate.latitude, long: selectedAnnotation.coordinate.latitude)
             destinationVC?.viewModel = viewModel
         }
+    }
+    
+    func hideIndicator() {
+        activityView.stopAnimating()
+    }
+    
+    func showIndicator() {
+        activityView.frame = view.frame
+        activityView.center = view.center
+        activityView.hidesWhenStopped = true
+        activityView.style = .large
+        activityView.color = .yellow
+        activityView.backgroundColor = .gray
+        activityView.startAnimating()
+        activityView.alpha = 0.5
+        navigationController?.view.addSubview(activityView)
     }
 }
 
