@@ -19,7 +19,6 @@
 		1E30E25F26BBE06D00A00763 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30E25E26BBE06D00A00763 /* LocationViewModel.swift */; };
 		1E30E26226BBE08500A00763 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30E26126BBE08500A00763 /* WeatherViewModel.swift */; };
 		1E30E26526BBE0BA00A00763 /* DefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30E26426BBE0BA00A00763 /* DefaultCell.swift */; };
-		1E30E26826BBE22F00A00763 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30E26726BBE22F00A00763 /* Bookmark.swift */; };
 		1E30E26E26BBFB4D00A00763 /* BookmarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30E26D26BBFB4D00A00763 /* BookmarkManager.swift */; };
 		1E30E27126BC6B6B00A00763 /* DefaultCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30E27026BC6B6A00A00763 /* DefaultCellViewModel.swift */; };
 		1E30E27526BC6C2100A00763 /* BookmarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E30E27426BC6C2100A00763 /* BookmarkCell.swift */; };
@@ -45,7 +44,6 @@
 		1E30E25E26BBE06D00A00763 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		1E30E26126BBE08500A00763 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		1E30E26426BBE0BA00A00763 /* DefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCell.swift; sourceTree = "<group>"; };
-		1E30E26726BBE22F00A00763 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		1E30E26D26BBFB4D00A00763 /* BookmarkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkManager.swift; sourceTree = "<group>"; };
 		1E30E27026BC6B6A00A00763 /* DefaultCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCellViewModel.swift; sourceTree = "<group>"; };
 		1E30E27426BC6C2100A00763 /* BookmarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCell.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 		1E30E26B26BBE24A00A00763 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1E30E26726BBE22F00A00763 /* Bookmark.swift */,
 				1EAD878226BE77D6007D0C27 /* WeatherModel.swift */,
 			);
 			path = Model;
@@ -271,7 +268,6 @@
 				1E30E25126BBDFFB00A00763 /* WeatherViewController.swift in Sources */,
 				1E30E23626BBD20400A00763 /* AppDelegate.swift in Sources */,
 				1EAD877E26BE718B007D0C27 /* LocationService.swift in Sources */,
-				1E30E26826BBE22F00A00763 /* Bookmark.swift in Sources */,
 				1E30E25F26BBE06D00A00763 /* LocationViewModel.swift in Sources */,
 				1E30E26E26BBFB4D00A00763 /* BookmarkManager.swift in Sources */,
 				1EAD878726C037ED007D0C27 /* HelpViewController.swift in Sources */,

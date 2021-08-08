@@ -7,9 +7,8 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, BookmarkDisplayable {
+class HomeViewController: UIViewController {
     @IBOutlet var bookmarkTableView: UITableView!
-    var bookmark: [String] = []
     var viewModel = HomeViewModel()
     var activityView: UIActivityIndicatorView = UIActivityIndicatorView()
     
@@ -51,7 +50,6 @@ extension HomeViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LocationSegue" {
         let locationViewModel = LocationViewModel()
-        locationViewModel.delegate = self
         
         let destinationVC = segue.destination as? LocationViewController
         destinationVC?.viewModel = locationViewModel

@@ -17,8 +17,7 @@ class BookmarkManager {
     
     static var shared = BookmarkManager()
     private init() {}
-    
-    var bookmarks = [Bookmark]()
+
     var annotations = [MKAnnotation]()
     var service = LocationService()
     

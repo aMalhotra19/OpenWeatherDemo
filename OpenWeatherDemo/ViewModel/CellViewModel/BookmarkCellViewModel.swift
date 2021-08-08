@@ -12,10 +12,10 @@ class BookmarkCellViewModel: RowDisplayable {
     var title: String
     var lat: String
     var lon: String
+    
     init(title: String, lat: String, lon: String) {
         self.title = title
         self.lat = lat
         self.lon = lon
     }
-    
 }
