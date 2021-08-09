@@ -7,7 +7,11 @@
 
 import Foundation
 
-class LocationService {
+protocol LocationServiceProtocol {
+    func fetchWeather(url: URL, completion: @escaping (Result<WeatherModel, NetworkError>) -> Void )
+}
+
+class LocationService: LocationServiceProtocol {
     func fetchWeather(url: URL, completion: @escaping (Result<WeatherModel, NetworkError>) -> Void ) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {

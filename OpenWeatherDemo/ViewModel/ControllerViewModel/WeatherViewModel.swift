@@ -49,7 +49,7 @@ class WeatherViewModel {
     func fetchWeather() {
         delegate?.showIndicator()
         BookmarkManager.shared.fetchWeather(for: lat, and: long) { (result) in
-            DispatchQueue.main.async { [weak self] in
+            self.guaranteeMainThread { [weak self] in
                 switch result {
                 case .success(let weather):
                     self?.weatherModel = weather
@@ -65,5 +65,11 @@ class WeatherViewModel {
     
     func refresh() {
         self.delegate?.refreshUI()
+    }
+}
+
+extension WeatherViewModel {
+    func guaranteeMainThread(_ work: @escaping () -> Void) {
+        Thread.isMainThread ? work() : DispatchQueue.main.async(execute: work)
     }
 }
